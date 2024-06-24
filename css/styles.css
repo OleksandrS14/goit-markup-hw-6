@@ -96,6 +96,70 @@ ol {
   line-height: 0;
 }
 
+.mob-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 72px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+}
+.menu-close-btn {
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid  #2e2f42;
+}
+
+.mob-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: auto;
+}
+.mob-nav-link {
+  font-weight: 700;
+font-size: 36px;
+line-height: 1.11111;
+letter-spacing: 0.02em;
+color: #2e2f42;
+}
+.mob-nav-link.active{
+  color: #404bbf;
+}
+.mob-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.mob-contact-link {
+  font-weight: 500;
+font-size: 20px; 
+line-height: 1.2;
+letter-spacing: 0.02em;
+color: #434455;
+}
+.mob-contact-link.active{
+  color: #4d5ae5;
+}
+.mob-social-list {
+  display: flex;
+  justify-content: space-between;
+}
 /*--------------hero-------------*/
 
 .hero {
@@ -104,16 +168,22 @@ ol {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/img-name.jpg);
+    url(../images/hero-mob-1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-top: 188px;
-  padding-bottom: 188px;
+padding: 72px 0;
   max-width: 1440px;
   margin: 0 auto;
 }
-
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+	screen and (min-resolution: 192dpi) and (max-width: 767px),
+	screen and (min-resolution: 2dppx) and (max-width: 767px) {
+	.hero {
+		background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+			url(../images/herp-mob-2x.jpg);
+	}
+}
 .hero-container {
   text-align: center;
 }
@@ -121,15 +191,15 @@ ol {
 .hero-title {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
   color: #ffff;
-  max-width: 496px;
+  max-width: 216px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .button {
@@ -391,18 +461,15 @@ ol {
 
 .footer {
   background: #2e2f42;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+padding: 96px 0;
 }
 
 .container-footers {
   display: flex;
-  align-items: baseline;
-  padding: 0 15px;
-  box-sizing: border-box;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
+
 }
 
 .footer-container {
@@ -418,7 +485,8 @@ ol {
   text-transform: uppercase;
   color: #4d5ae5;
   margin-bottom: 16px;
-  display: inline-block;
+  display:block;
+  text-align: center;
 }
 
 .footer-logo-studio {
@@ -441,9 +509,7 @@ ol {
   width: 264px;
 }
 
-.footer-container-social {
-  margin-left: 120px;
-}
+
 
 .footer-text-social {
   font-size: 16px;
@@ -452,6 +518,7 @@ ol {
   color: #ffffff;
   margin-bottom: 16px;
   font-weight: 500;
+  text-align: center;
 }
 
 .footer-social-list {
@@ -490,9 +557,7 @@ ol {
   align-items: center;
 }
 
-.form-container-footer {
-  margin-left: 80px;
-}
+
 
 .footer-text-email {
   font-size: 16px;
@@ -501,10 +566,13 @@ ol {
   color: #ffffff;
   margin-bottom: 16px;
   font-weight: 500;
+  text-align: center;
 }
 
 .footer-form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 
@@ -590,7 +658,7 @@ ol {
 
 .modal {
   position: absolute;
-  width: 408px;
+  width: 288px;
   min-height: 584px;
   background-color: #fcfcfc;
   border-radius: 4px;
@@ -598,7 +666,7 @@ ol {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px ;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
 }
